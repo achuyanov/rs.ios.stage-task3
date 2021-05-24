@@ -32,7 +32,10 @@
 #pragma mark - Fourth
 
 - (BOOL)isDateInThisWeek:(NSDate *)date {
-    return NO;
+    NSCalendar *cal = NSCalendar.currentCalendar;
+    NSInteger curWeek = [cal component:NSCalendarUnitWeekOfYear fromDate:NSDate.now];
+    NSInteger dateWeek = [cal component:NSCalendarUnitWeekOfYear fromDate:date];
+    return (dateWeek == curWeek);
 }
 
 @end
