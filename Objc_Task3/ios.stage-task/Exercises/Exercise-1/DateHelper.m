@@ -23,7 +23,10 @@
 #pragma mark - Third
 
 - (NSString *)getDayName:(NSDate*) date {
-    return nil;
+    NSDateFormatter *dateFormatter = [NSDateFormatter new];
+    dateFormatter.dateFormat = @"E";
+    dateFormatter.locale = [NSLocale.alloc initWithLocaleIdentifier:@"ru_RU"];
+    return [dateFormatter stringFromDate:date];
 }
 
 #pragma mark - Fourth
